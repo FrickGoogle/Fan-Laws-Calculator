@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class FanLaws {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Which fan law do you want to calculate?\n1. RPM vs. Diameter\n2. RPM vs. Speed\n3. Diameter vs. Speed\n");
+    int choice = scanner.nextInt();
+
+    switch (choice) {
+      case 1:
+        System.out.println("Enter the current RPM:\n");
+        double rpm = scanner.nextDouble();
+        System.out.println("Enter the current diameter (in inches):\n");
+        double diameter = scanner.nextDouble();
+        System.out.println("Enter the new diameter (in inches):\n");
+        double newDiameter = scanner.nextDouble();
+        double newRpm = rpm * (newDiameter / diameter);
+        System.out.println("The new RPM is: " + newRpm + "\n");
+        break;
+      case 2:
+        System.out.println("Enter the current RPM:\n");
+        rpm = scanner.nextDouble();
+        System.out.println("Enter the current speed (in feet per minute):\n");
+        double speed = scanner.nextDouble();
+        System.out.println("Enter the new speed (in feet per minute):\n");
+        double newSpeed = scanner.nextDouble();
+        newRpm = rpm * (newSpeed / speed);
+        System.out.println("The new RPM is: " + newRpm + "\n");
+        break;
+      case 3:
+        System.out.println("Enter the current diameter (in inches):\n");
+        diameter = scanner.nextDouble();
+        System.out.println("Enter the current speed (in feet per minute):\n");
+        speed = scanner.nextDouble();
+        System.out.println("Enter the new diameter (in inches):\n");
+        newDiameter = scanner.nextDouble();
+        double nSpeed = speed * (newDiameter / diameter);
+        System.out.println("The new speed is: " + nSpeed + " feet per minute\n");
+        break;
+      default:
+        System.out.println("Invalid choice.");
+    }
+  }
+}
